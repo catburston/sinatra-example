@@ -36,6 +36,13 @@ get '/api/items' do
 	store.transaction do
 		tasks=store[:tasks]
 	end
-
+	tasks=['Hello','World','Hi']
 	tasks.to_json
+end
+
+post '/api/remove' do
+	store.transaction do
+		myd = params[:checkbox].to_i
+		store[:tasks].delete_at(myd)
+	end
 end
