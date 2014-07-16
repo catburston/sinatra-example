@@ -1,4 +1,5 @@
 <html>
+<<<<<<< HEAD
   <body>
     <%= Date.today %>
     Hello
@@ -13,3 +14,27 @@
     </form>
   </body>
 </html>
+=======
+	<body>
+		<form method="post" action='message'>
+			<input type='text' name="message">
+			<input type='submit'>
+		</form>
+		<form method="post" action='dl'>
+			<ul title="TO DO LIST">
+				<% if @tasks!=nil %>
+					<% i = 0 %>
+					<% @tasks.each do |item| %>
+						<li><input value="<%= i %>" name="checkbox" type="checkbox" > <%= item %></li>
+						<% i+= 1 %>
+					<% end %>
+				<%end%>
+			</ul>
+			<input type='submit' name='delete' value='delete'>
+		</form>
+
+	</body>
+</html>
+
+
+>>>>>>> 01563abb46416b23591e3d1a1d6273dfeb4eafab
